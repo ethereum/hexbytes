@@ -1,30 +1,30 @@
-# <PROJECT_NAME>
+# HexBytes
 
-[![Join the chat at https://gitter.im/ethereum/<REPO_NAME>](https://badges.gitter.im/ethereum/<REPO_NAME>.svg)](https://gitter.im/ethereum/<REPO_NAME>?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Join the chat at https://gitter.im/ethereum/hexbytes](https://badges.gitter.im/ethereum/hexbytes.svg)](https://gitter.im/ethereum/hexbytes?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-[![Build Status](https://travis-ci.org/ethereum/<REPO_NAME>.png)](https://travis-ci.org/ethereum/<REPO_NAME>)
+[![Build Status](https://travis-ci.org/ethereum/hexbytes.png)](https://travis-ci.org/ethereum/hexbytes)
    
 
-<SHORT_DESCRIPTION>
+Python `bytes` subclass that decodes hex, with a readable console output
 
 * Python 3.5+ support
 
-Read more in the [documentation on ReadTheDocs](http://<RTD_NAME>.readthedocs.io/). [View the change log on Github](docs/releases.rst).
+Read more in the [documentation on ReadTheDocs](http://hexbytes.readthedocs.io/). [View the change log on Github](docs/releases.rst).
 
 ## Quickstart
 
 ```sh
-pip install <PYPI_NAME>
+pip install hexbytes
 ```
 
 ## Developer setup
 
-If you would like to hack on <REPO_NAME>, set up your dev environment with:
+If you would like to hack on hexbytes, set up your dev environment with:
 
 ```sh
 
-git clone git@github.com:ethereum/<REPO_NAME>.git
-cd <REPO_NAME>
+git clone git@github.com:ethereum/hexbytes.git
+cd hexbytes
 virtualenv -p python3 venv
 . venv/bin/activate
 pip install -e .[dev]
@@ -38,7 +38,7 @@ Show flake8 errors on file change:
 
 ```sh
 # Test flake8
-when-changed -v -s -r -1 <MODULE_NAME>/ tests/ -c "clear; flake8 <MODULE_NAME> tests && echo 'flake8 success' || echo 'error'"
+when-changed -v -s -r -1 hexbytes/ tests/ -c "clear; flake8 hexbytes tests && echo 'flake8 success' || echo 'error'"
 ```
 
 Run multi-process tests in one command, but without color:
@@ -54,7 +54,7 @@ Run in one thread, with color and desktop notifications:
 
 ```sh
 cd venv
-ptw --onfail "notify-send -t 5000 'Test failure ⚠⚠⚠⚠⚠' 'python 3 test on <REPO_NAME> failed'" ../tests ../<MODULE_NAME>
+ptw --onfail "notify-send -t 5000 'Test failure ⚠⚠⚠⚠⚠' 'python 3 test on hexbytes failed'" ../tests ../hexbytes
 ```
 
 ### Release setup
