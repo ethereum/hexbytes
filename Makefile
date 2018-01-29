@@ -25,7 +25,7 @@ lint:
 	tox -elint
 
 lint-roll: lint
-	isort --recursive <MODULE_NAME> tests
+	isort --recursive hexbytes tests
 
 test:
 	py.test tests
