@@ -36,7 +36,7 @@ Example :class:`~hexbytes.main.HexBytes` usage:
     >>> bytes(hb)
     b"\x03\x08wf\xbfh\xe7\x86q\xd1\xeaCj\xe0\x87\xdat\xa1'a\xda\xc0 \x01\x1a\x9e\xdd\xc4\x90\x0b\xf1;"
 
-hexbytes\.main module
+HexBytes
 ---------------------
 
 .. automodule:: hexbytes.main
