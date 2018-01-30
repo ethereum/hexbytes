@@ -1,8 +1,8 @@
 # HexBytes
 
-[![Join the chat at https://gitter.im/ethereum/hexbytes](https://badges.gitter.im/ethereum/hexbytes.svg)](https://gitter.im/ethereum/hexbytes?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Join the chat at https://gitter.im/ethereum/web3.py](https://badges.gitter.im/ethereum/web3.py.svg)](https://gitter.im/ethereum/web3.py?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-[![Build Status](https://travis-ci.org/ethereum/hexbytes.png)](https://travis-ci.org/ethereum/hexbytes)
+[![Build Status](https://travis-ci.org/carver/hexbytes.png)](https://travis-ci.org/carver/hexbytes)
    
 
 Python `bytes` subclass that decodes hex, with a readable console output
@@ -56,7 +56,7 @@ You can set up your dev environment with:
 
 ```sh
 
-git clone git@github.com:ethereum/hexbytes.git
+git clone git@github.com:carver/hexbytes.git
 cd hexbytes
 virtualenv -p python3 venv
 . venv/bin/activate
