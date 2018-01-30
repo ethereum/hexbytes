@@ -24,8 +24,9 @@ clean-pyc:
 lint:
 	tox -elint
 
-lint-roll: lint
+lint-roll:
 	isort --recursive hexbytes tests
+	$(MAKE) lint
 
 test:
 	py.test tests

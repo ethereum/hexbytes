@@ -1,6 +1,15 @@
 Release Notes
 =============
 
+v0.1.0-beta.0
+--------------
+
+Released Jan 30, 2017
+
+- Tested a basic integration with eth-rlp
+- Given the simplicity of the project and the longer usage history in web3.py,
+  it is reasonable to bump to beta immediately.
+
 v0.1.0-alpha.2
 --------------
 
