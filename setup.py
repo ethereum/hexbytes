@@ -22,7 +22,9 @@ extras_require={
     'dev': [
         "bumpversion>=0.5.3,<1",
         "pytest-xdist",
+        "pytest-watch>=4.1.0,<5",
         "wheel",
+        "ipython",
     ],
 }
 
@@ -61,5 +63,6 @@ setup(
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: Implementation :: PyPy',
     ],
 )
