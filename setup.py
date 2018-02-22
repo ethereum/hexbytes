@@ -10,6 +10,7 @@ extras_require={
         "pytest==3.3.2",
         "tox>=2.9.1,<3",
         "hypothesis>=3.44.24,<4",
+        "eth-hash[pycryptodome]",
     ],
     'lint': [
         "flake8==3.4.1",
@@ -46,7 +47,7 @@ setup(
     url='https://github.com/ethereum/hexbytes',
     include_package_data=True,
     install_requires=[
-        'eth-utils==1.0.0-beta.1',
+        'eth-utils>=1.0.0-beta.2,<2.0.0',
     ],
     setup_requires=['setuptools-markdown'],
     extras_require=extras_require,
