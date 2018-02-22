@@ -39,7 +39,7 @@ extras_require['dev'] = (
 setup(
     name='hexbytes',
     # *IMPORTANT*: Don't manually change the version here. Use `make bump`, as described in readme
-    version='0.1.0-beta.0',
+    version='0.1.0-beta.1',
     description="""hexbytes: Python `bytes` subclass that decodes hex, with a readable console output""",
     long_description_markdown_filename='README.md',
     author='Jason Carver',
