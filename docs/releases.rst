@@ -1,6 +1,14 @@
 Release Notes
 =============
 
+v0.1.0
+--------------
+
+Released Mar 1, 2018
+
+- Marked stable
+- eth-utils v1.0.1 support
+
 v0.1.0-beta.1
 --------------
 
