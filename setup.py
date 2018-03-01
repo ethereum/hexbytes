@@ -57,7 +57,7 @@ setup(
     keywords='ethereum',
     packages=find_packages(exclude=["tests", "tests.*"]),
     classifiers=[
-        'Development Status :: 4 - Beta',
+        'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
