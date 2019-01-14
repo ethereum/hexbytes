@@ -7,7 +7,7 @@ from setuptools import (
 
 extras_require={
     'test': [
-        "pytest==3.3.2",
+        "pytest>=3.6.0",
         "tox>=2.9.1,<3",
         "hypothesis>=3.44.24,<4",
         "eth-hash[pycryptodome]",
@@ -56,6 +56,7 @@ setup(
     zip_safe=False,
     keywords='ethereum',
     packages=find_packages(exclude=["tests", "tests.*"]),
+    package_data={'hexbytes': ['py.typed']},
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
