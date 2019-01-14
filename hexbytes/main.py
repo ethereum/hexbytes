@@ -1,7 +1,7 @@
 from typing import (
-    cast,
     Type,
     Union,
+    cast,
 )
 
 from eth_utils import (
