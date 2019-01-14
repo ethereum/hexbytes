@@ -21,7 +21,7 @@ class HexBytes(bytes):
     '''
     def __new__(cls: Type[bytes], val: Union[bytes, int, str]) -> "HexBytes":
         bytesval = hexstr_if_str(to_bytes, val)
-        return cast(HexBytes, super().__new__(cls, bytesval))  # type: ignore  # https://github.com/python/typeshed/issues/2686  # noqa: E501
+        return cast(HexBytes, super().__new__(cls, bytesval))  # type: ignore  # https://github.com/python/typeshed/issues/2630  # noqa: E501
 
     def hex(self) -> str:
         '''
