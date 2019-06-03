@@ -1,5 +1,3 @@
-import pytest
-
 from eth_utils import (
     decode_hex,
     remove_0x_prefix,
@@ -8,6 +6,7 @@ from hypothesis import (
     given,
     strategies as st,
 )
+import pytest
 
 from hexbytes import (
     HexBytes,
