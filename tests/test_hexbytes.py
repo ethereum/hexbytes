@@ -1,3 +1,5 @@
+import pytest
+
 from eth_utils import (
     decode_hex,
     remove_0x_prefix,
@@ -42,3 +44,29 @@ def test_hex_inputs(hex_input):
 def test_pretty_output():
     hb = HexBytes(b'\x0F\x1a')
     assert repr(hb) == "HexBytes('0x0f1a')"
+
+
+@given(st.binary(), st.integers())
+def test_hexbytes_index(primitive, index):
+    hexbytes = HexBytes(primitive)
+    if index >= len(primitive) or index < -1 * len(primitive):
+        with pytest.raises(IndexError):
+            hexbytes[index]
+    else:
+        assert hexbytes[index] == primitive[index]
+
+
+@given(st.binary(), st.integers(), st.integers())
+def test_slice(primitive, start, stop):
+    hexbytes = HexBytes(primitive)
+    expected = HexBytes(primitive[start:stop])
+    assert hexbytes[start:stop] == expected
+
+
+@given(st.binary(), st.integers(), st.integers(), st.integers())
+def test_slice_stepped(primitive, start, stop, step):
+    hexbytes = HexBytes(primitive)
+    if step == 0:
+        step = None
+    expected = HexBytes(primitive[start:stop:step])
+    assert hexbytes[start:stop:step] == expected

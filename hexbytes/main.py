@@ -2,6 +2,7 @@ from typing import (
     Type,
     Union,
     cast,
+    overload,
 )
 
 from eth_utils import (
@@ -28,6 +29,21 @@ class HexBytes(bytes):
         Just like :meth:`bytes.hex`, but prepends "0x"
         '''
         return '0x' + super().hex()
+
+    @overload
+    def __getitem__(self, key: int) -> int:
+        ...
+
+    @overload  # noqa: F811
+    def __getitem__(self, key: slice) -> 'HexBytes':
+        ...
+
+    def __getitem__(self, key: Union[int, slice]) -> Union[int, bytes, 'HexBytes']:  # noqa: F811
+        result = super().__getitem__(key)
+        if hasattr(result, 'hex'):
+            return type(self)(result)
+        else:
+            return result
 
     def __repr__(self) -> str:
         return 'HexBytes(%r)' % self.hex()

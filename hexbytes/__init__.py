@@ -1,1 +1,3 @@
-from .main import HexBytes  # noqa: F401
+from .main import (  # noqa: F401
+    HexBytes,
+)
