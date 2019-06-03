@@ -54,7 +54,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'HexBytes'
-copyright = '2018, Jason Carver, Piper Merriam'
+copyright = '2019, Jason Carver, Piper Merriam'
 
 __version__ = setup_version
 # The version info for the project you're documenting, acts as replacement for
@@ -210,7 +210,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
   ('index', 'hexbytes.tex', 'HexBytes Documentation',
-   'Jason Carver', 'manual'),
+   'The Ethereum Foundation', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -240,7 +240,7 @@ latex_documents = [
 # (source start file, name, description, authors, manual section).
 man_pages = [
     ('index', 'hexbytes', 'HexBytes Documentation',
-     ['Jason Carver'], 1)
+     ['The Ethereum Foundation'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -254,7 +254,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
   ('index', 'HexBytes', 'HexBytes Documentation',
-   'Jason Carver', 'HexBytes', 'Python `bytes` subclass that decodes hex, with a readable console output',
+   'The Ethereum Foundation', 'hexbytes', 'Python `bytes` subclass that decodes hex, with a readable console output',
    'Miscellaneous'),
 ]
 
@@ -273,7 +273,7 @@ texinfo_documents = [
 # -- Intersphinx configuration ------------------------------------------------
 
 intersphinx_mapping = {
-    'python': ('https://docs.python.org/3.5', None),
+    'python': ('https://docs.python.org/3.6', None),
 }
 
 # -- Doctest configuration ----------------------------------------
