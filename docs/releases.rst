@@ -1,6 +1,25 @@
 Release Notes
 =============
 
+v0.2.0
+--------------
+
+Released June 3, 2019
+
+- **Breaking Changes**
+
+  - Dropped Python3.5 support (only in name at this release, but py3.6 features will be used soon
+    `#10 <https://github.com/ethereum/hexbytes/pull/10>`_
+- Features
+
+  - A slice of HexBytes will now produce another HexBytes object
+    `#9 <https://github.com/ethereum/hexbytes/pull/9>`_
+- Maintenance
+
+  - Added type hints
+    `#7 <https://github.com/ethereum/hexbytes/pull/7>`_
+
+
 v0.1.0
 --------------
 
