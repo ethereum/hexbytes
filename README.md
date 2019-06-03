@@ -1,15 +1,13 @@
 # HexBytes
 
 [![Join the chat at https://gitter.im/ethereum/web3.py](https://badges.gitter.im/ethereum/web3.py.svg)](https://gitter.im/ethereum/web3.py?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Build Status](https://travis-ci.org/carver/hexbytes.png)](https://travis-ci.org/carver/hexbytes)
+[![Build Status](https://circleci.com/gh/ethereum/<REPO_NAME>.svg?style=shield)](https://circleci.com/gh/ethereum/<REPO_NAME>)
 [![PyPI version](https://badge.fury.io/py/hexbytes.svg)](https://badge.fury.io/py/hexbytes)
 [![Python versions](https://img.shields.io/pypi/pyversions/hexbytes.svg)](https://pypi.python.org/pypi/hexbytes)
 [![Docs build](https://readthedocs.org/projects/hexbytes/badge/?version=latest)](http://hexbytes.readthedocs.io/en/latest/?badge=latest)
    
 
 Python `bytes` subclass that decodes hex, with a readable console output
-
-* Python 3.5+ support
 
 Read more in the [documentation on ReadTheDocs](http://hexbytes.readthedocs.io/). [View the change log](http://hexbytes.readthedocs.io/en/latest/releases.html).
 
@@ -41,10 +39,10 @@ HexBytes('0x03087766bf68e78671d1ea436ae087da74a12761dac020011a9eddc4900bf13b')
 b"\x03\x08wf\xbfh\xe7\x86q\xd1\xeaCj\xe0\x87\xdat\xa1'a\xda\xc0 \x01\x1a\x9e\xdd\xc4\x90\x0b\xf1;"
 ```
 
-## Developer setup
+## Developer Setup
 
-If you would like to hack on hexbytes, please check out the
-[Ethereum Development Tactical Manual](https://github.com/pipermerriam/ethereum-dev-tactical-manual)
+If you would like to hack on <REPO_NAME>, please check out the [Snake Charmers
+Tactical Manual](https://github.com/ethereum/snake-charmers-tactical-manual)
 for information on how we do:
 
 - Testing
@@ -57,7 +55,6 @@ for information on how we do:
 You can set up your dev environment with:
 
 ```sh
-
 git clone git@github.com:carver/hexbytes.git
 cd hexbytes
 virtualenv -p python3 venv
@@ -111,7 +108,11 @@ The version format for this repo is `{major}.{minor}.{patch}` for stable, and
 `{major}.{minor}.{patch}-{stage}.{devnum}` for unstable (`stage` can be alpha or beta).
 
 To issue the next version in line, specify which part to bump,
-like `make release bump=minor` or `make release bump=devnum`.
+like `make release bump=minor` or `make release bump=devnum`. This is typically done from the
+master branch, except when releasing a beta (in which case the beta is released from master,
+and the previous stable branch is released from said branch). To include changes made with each
+release, update "docs/releases.rst" with the changes, and apply commit directly to master 
+before release.
 
 If you are in a beta version, `make release bump=stage` will switch to a stable.
 
