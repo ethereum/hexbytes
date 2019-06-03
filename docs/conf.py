@@ -254,7 +254,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
   ('index', 'HexBytes', 'HexBytes Documentation',
-   'The Ethereum Foundation', '<PROJECT_NAME>', 'Python `bytes` subclass that decodes hex, with a readable console output',
+   'The Ethereum Foundation', 'hexbytes', 'Python `bytes` subclass that decodes hex, with a readable console output',
    'Miscellaneous'),
 ]
 

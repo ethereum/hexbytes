@@ -1,6 +1,6 @@
-<MODULE_NAME>
-<PYPI_NAME>
-<REPO_NAME>
-<RTD_NAME>
-<PROJECT_NAME>
-<SHORT_DESCRIPTION>
+hexbytes
+hexbytes
+hexbytes
+hexbytes
+hexbytes
+Python `bytes` subclass that decodes hex, with a readable console output
