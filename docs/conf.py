@@ -54,7 +54,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'HexBytes'
-copyright = '2019, Jason Carver, Piper Merriam'
+copyright = '2020, The Ethereum Foundation'
 
 __version__ = setup_version
 # The version info for the project you're documenting, acts as replacement for
