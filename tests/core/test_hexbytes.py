@@ -1,6 +1,7 @@
 from eth_utils import (
     decode_hex,
     remove_0x_prefix,
+    to_bytes as standard_to_bytes,
 )
 from hypothesis import (
     given,
@@ -27,6 +28,43 @@ def assert_equal(hexbytes, bytes_expected):
 def test_bytes_inputs(primitive):
     wrapped = HexBytes(primitive)
     assert_equal(wrapped, primitive)
+
+
+@given(st.binary())
+def test_bytearray_inputs(primitive):
+    byte_array_input = bytearray(primitive)
+    wrapped = HexBytes(byte_array_input)
+    assert_equal(wrapped, primitive)
+
+
+@pytest.mark.parametrize(
+    'boolval, expected_repr',
+    (
+        (True, "HexBytes('0x01')"),
+        (False, "HexBytes('0x00')"),
+    ),
+)
+def test_bool_inputs(boolval, expected_repr):
+    wrapped = HexBytes(boolval)
+    assert repr(wrapped) == expected_repr
+    assert_equal(wrapped, standard_to_bytes(boolval))
+
+
+@given(st.integers(max_value=-1))
+def test_invalid_integer_inputs(integer):
+    with pytest.raises(ValueError) as exc_info:
+        HexBytes(integer)
+
+    message = str(exc_info.value)
+    assert 'negative' in message
+    assert str(integer) in message
+
+
+@given(st.integers(min_value=0))
+def test_integer_inputs(integer):
+    wrapped = HexBytes(integer)
+    assert hex(integer)[2:] in repr(wrapped)
+    assert_equal(wrapped, standard_to_bytes(integer))
 
 
 @given(hexstr_strategy)
