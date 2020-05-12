@@ -11,7 +11,7 @@ extras_require = {
         "pytest-xdist",
         "tox==3.14.6",
         "hypothesis>=3.44.24,<4",
-        "eth-hash[pycryptodome]",
+        'eth-utils>=1.0.1,<2',
     ],
     'lint': [
         "flake8==3.7.9",
@@ -56,9 +56,7 @@ setup(
     author_email='snakecharmers@ethereum.org',
     url='https://github.com/ethereum/hexbytes',
     include_package_data=True,
-    install_requires=[
-        'eth-utils>=1.0.1,<2',
-    ],
+    install_requires=[],
     python_requires='>=3.6, <4',
     extras_require=extras_require,
     py_modules=['hexbytes'],
