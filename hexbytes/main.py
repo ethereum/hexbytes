@@ -46,4 +46,4 @@ class HexBytes(bytes):
             return result
 
     def __repr__(self) -> str:
-        return 'HexBytes(%r)' % self.hex()
+        return f"HexBytes({self.hex()!r})"
