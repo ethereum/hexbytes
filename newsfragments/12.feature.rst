@@ -1,2 +1,0 @@
-Officially support bytearray, int, and bool as inputs to :class:`hexbytes.HexBytes`.
-Drop the dependency on eth-utils, for a much smaller & faster install.

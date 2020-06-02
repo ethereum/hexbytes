@@ -4,6 +4,7 @@ package = "hexbytes"
 filename = "docs/release_notes.rst"
 directory = "newsfragments"
 underlines = ["-", "~", "^"]
+title_format = "HexBytes v{version} ({project_date})"
 issue_format = "`#{issue} <https://github.com/ethereum/hexbytes/issues/{issue}>`__"
 
 [[tool.towncrier.type]]

@@ -3,6 +3,16 @@ Release Notes
 
 .. towncrier release notes start
 
+HexBytes v0.2.1 (2020-06-02)
+---------------------------
+
+Features
+~~~~~~~~
+
+- Officially support bytearray, int, and bool as inputs to :class:`~hexbytes.main.HexBytes`.
+  Drop the dependency on eth-utils, for a much smaller & faster install. (`#12 <https://github.com/ethereum/hexbytes/issues/12>`__)
+
+
 v0.2.0
 --------------
 
