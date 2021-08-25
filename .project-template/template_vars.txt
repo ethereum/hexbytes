@@ -2,5 +2,5 @@ hexbytes
 hexbytes
 hexbytes
 hexbytes
-hexbytes
+HexBytes
 Python `bytes` subclass that decodes hex, with a readable console output

@@ -12,12 +12,12 @@ from ._utils import (
 
 class HexBytes(bytes):
     """
-    HexBytes is a *very* thin wrapper around the python
-    built-in :class:`bytes` class. It has these three changes:
+    HexBytes is a *very* thin wrapper around the python built-in :class:`bytes` class.
 
-    1. Accepts more initializing values, like hex strings, non-negative integers, and booleans
-    2. Returns hex with prefix '0x' from :meth:`HexBytes.hex`
-    3. The representation at console is in hex
+    It has these three changes:
+        1. Accepts more initializing values, like hex strings, non-negative integers, and booleans
+        2. Returns hex with prefix '0x' from :meth:`HexBytes.hex`
+        3. The representation at console is in hex
     """
     def __new__(cls: Type[bytes], val: Union[bool, bytearray, bytes, int, str]) -> "HexBytes":
         bytesval = to_bytes(val)
@@ -25,7 +25,9 @@ class HexBytes(bytes):
 
     def hex(self) -> str:
         """
-        Just like :meth:`bytes.hex`, but prepends "0x"
+        Output hex-encoded bytes, with an "0x" prefix.
+
+        Everything following the "0x" is output exactly like :meth:`bytes.hex`.
         """
         return '0x' + super().hex()
 

@@ -1,0 +1,1 @@
+Merge in template changes from the last year. Pass pydocstyle tests at the new major version.

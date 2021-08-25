@@ -9,7 +9,7 @@
 
 Python `bytes` subclass that decodes hex, with a readable console output
 
-Read more in the [documentation on ReadTheDocs](http://hexbytes.readthedocs.io/). [View the change log](http://hexbytes.readthedocs.io/en/latest/releases.html).
+Read more in the [documentation on ReadTheDocs](https://hexbytes.readthedocs.io/). [View the change log](https://hexbytes.readthedocs.io/en/latest/release_notes.html).
 
 ## Quickstart
 
