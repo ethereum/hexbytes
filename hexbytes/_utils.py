@@ -6,7 +6,7 @@ from typing import (
 
 def to_bytes(val: Union[bool, bytearray, bytes, int, str]) -> bytes:
     """
-    Equivalent to: eth_utils.hexstr_if_str(eth_utils.to_bytes, val)
+    Equivalent to: `eth_utils.hexstr_if_str(eth_utils.to_bytes, val)` .
 
     Convert a hex string, integer, or bool, to a bytes representation.
     Alternatively, pass through bytes or bytearray as a bytes value.
