@@ -3,8 +3,23 @@ Release Notes
 
 .. towncrier release notes start
 
+HexBytes v0.2.2 (2021-08-25)
+----------------------------
+
+Miscellaneous changes
+~~~~~~~~~~~~~~~~~~~~~
+
+- Pass mypy tests with `--no-implicit-reexport` (`#15 <https://github.com/ethereum/hexbytes/pull/15>`__)
+
+
+Internal Changes - for hexbytes Contributors
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Merge in template changes from the last year. Pass pydocstyle tests at the new major version. (`#16 <https://github.com/ethereum/hexbytes/issues/16>`__)
+
+
 HexBytes v0.2.1 (2020-06-02)
----------------------------
+----------------------------
 
 Features
 ~~~~~~~~
