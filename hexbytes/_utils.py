@@ -11,27 +11,26 @@ def to_bytes(val: Union[bool, bytearray, bytes, int, str]) -> bytes:
     Convert a hex string, integer, or bool, to a bytes representation.
     Alternatively, pass through bytes or bytearray as a bytes value.
     """
-    if isinstance(val, bytes):
-        return val
-    elif isinstance(val, str):
-        return hexstr_to_bytes(val)
-    elif isinstance(val, bytearray):
-        return bytes(val)
-    elif isinstance(val, bool):
-        return b"\x01" if val else b"\x00"
-    elif isinstance(val, int):
-        # Note that this int check must come after the bool check, because
-        #   isinstance(True, int) is True
-        if val < 0:
-            raise ValueError(f"Cannot convert negative integer {val} to bytes")
+    type_var = type(val)
+    if type_var is bytes:
+        return val  # type: ignore
+    elif type_var is str:
+        return hexstr_to_bytes(val)  # type: ignore
+    elif type_var is bytearray:
+        return bytes(val)  # type: ignore
+    elif type_var is int:
+        if val < 0:  # type: ignore
+            raise ValueError(f"Cannot convert negative integer {val} to bytes")  # type: ignore
         else:
-            return to_bytes(hex(val))
+            return hexstr_to_bytes(hex(val))  # type: ignore
+    elif type_var is bool:
+        return b"\x01" if val else b"\x00"
     else:
-        raise TypeError(f"Cannot convert {val!r} of type {type(val)} to bytes")
+        raise TypeError(f"Cannot convert {val!r} of type {type_var} to bytes")
 
 
 def hexstr_to_bytes(hexstr: str) -> bytes:
-    if hexstr.startswith("0x") or hexstr.startswith("0X"):
+    if hexstr.startswith(("0x", "0X")):
         non_prefixed_hex = hexstr[2:]
     else:
         non_prefixed_hex = hexstr
