@@ -31,7 +31,7 @@ def to_bytes(val: Union[bool, bytearray, bytes, int, str]) -> bytes:
 
 
 def hexstr_to_bytes(hexstr: str) -> bytes:
-    if hexstr.startswith("0x") or hexstr.startswith("0X"):
+    if hexstr.startswith(("0x", "0X")):
         non_prefixed_hex = hexstr[2:]
     else:
         non_prefixed_hex = hexstr
