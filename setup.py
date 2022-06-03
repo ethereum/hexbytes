@@ -7,10 +7,10 @@ from setuptools import (
 
 extras_require = {
     'test': [
-        "pytest==5.4.1",
+        "pytest==7.0.1",
         "pytest-xdist",
         "tox==3.14.6",
-        "hypothesis>=3.44.24,<4",
+        "hypothesis>=3.44.24,<=6.31.6",
         'eth-utils>=1.0.1,<2',
     ],
     'lint': [
@@ -75,5 +75,8 @@ setup(
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
     ],
 )
