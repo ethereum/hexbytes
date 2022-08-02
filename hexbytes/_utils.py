@@ -4,7 +4,7 @@ from typing import (
 )
 
 
-def to_bytes(val: Union[bool, bytearray, bytes, int, str]) -> bytes:
+def to_bytes(val: Union[bool, bytearray, bytes, int, str, memoryview]) -> bytes:
     """
     Equivalent to: `eth_utils.hexstr_if_str(eth_utils.to_bytes, val)` .
 
@@ -26,12 +26,14 @@ def to_bytes(val: Union[bool, bytearray, bytes, int, str]) -> bytes:
             raise ValueError(f"Cannot convert negative integer {val} to bytes")
         else:
             return to_bytes(hex(val))
+    elif isinstance(val, memoryview):
+        return bytes(val)
     else:
         raise TypeError(f"Cannot convert {val!r} of type {type(val)} to bytes")
 
 
 def hexstr_to_bytes(hexstr: str) -> bytes:
-    if hexstr.startswith("0x") or hexstr.startswith("0X"):
+    if hexstr.startswith(("0x", "0X")):
         non_prefixed_hex = hexstr[2:]
     else:
         non_prefixed_hex = hexstr

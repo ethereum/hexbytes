@@ -19,7 +19,7 @@ class HexBytes(bytes):
         2. Returns hex with prefix '0x' from :meth:`HexBytes.hex`
         3. The representation at console is in hex
     """
-    def __new__(cls: Type[bytes], val: Union[bool, bytearray, bytes, int, str]) -> "HexBytes":
+    def __new__(cls: Type[bytes], val: Union[bool, bytearray, bytes, int, str, memoryview]) -> "HexBytes":
         bytesval = to_bytes(val)
         return cast(HexBytes, super().__new__(cls, bytesval))  # type: ignore  # https://github.com/python/typeshed/issues/2630  # noqa: E501
 
