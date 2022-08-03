@@ -37,6 +37,13 @@ def test_bytearray_inputs(primitive):
     assert_equal(wrapped, primitive)
 
 
+@given(st.binary())
+def test_memoryview_inputs(primitive):
+    memoryview_input = memoryview(primitive)
+    wrapped = HexBytes(memoryview_input)
+    assert_equal(wrapped, primitive)
+
+
 @pytest.mark.parametrize(
     'boolval, expected_repr',
     (
