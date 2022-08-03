@@ -1,0 +1,2 @@
+Improve speed of the check for 0x at the beginning of the hex string. Similar to changes in
+eth-utils. (Technically merged by #22, but first posted in #21)

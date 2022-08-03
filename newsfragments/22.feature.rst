@@ -1,0 +1,2 @@
+Type signature now accepts `memoryview` when creating HexBytes. It converts to a `bytes` internally,
+so not any performance benefit. But at least it's *possible* now, and mypy stops complaining.
