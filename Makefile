@@ -46,14 +46,16 @@ build-docs:
 	$(MAKE) -C docs html
 	$(MAKE) -C docs doctest
 
-validate-docs:
+validate-docs: build-docs
 	python ./newsfragments/validate_files.py
-	towncrier --draft --version preview
+	towncrier build --draft --version preview
 
-docs: build-docs validate-docs
+check-docs: build-docs validate-docs
+
+docs: check-docs
 	open docs/_build/html/index.html
 
-linux-docs: build-docs
+linux-docs: check-docs
 	xdg-open docs/_build/html/index.html
 
 check-bump:
