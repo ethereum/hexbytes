@@ -28,7 +28,8 @@ class HexBytes(bytes):
     HexBytes is a *very* thin wrapper around the python built-in :class:`bytes` class.
 
     It has these three changes:
-        1. Accepts more initializing values, like hex strings, non-negative integers, and booleans
+        1. Accepts more initializing values, like hex strings, non-negative integers,
+           and booleans
         2. Returns hex with prefix '0x' from :meth:`HexBytes.hex`
         3. The representation at console is in hex
     """
