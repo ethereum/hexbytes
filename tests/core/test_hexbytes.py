@@ -13,7 +13,7 @@ from hexbytes import (
     HexBytes,
 )
 
-hexstr_strategy = st.from_regex(r'\A(0[xX])?[0-9a-fA-F]*\Z')
+hexstr_strategy = st.from_regex(r"\A(0[xX])?[0-9a-fA-F]*\Z")
 
 
 def assert_equal(hexbytes, bytes_expected):
@@ -45,7 +45,7 @@ def test_memoryview_inputs(primitive):
 
 
 @pytest.mark.parametrize(
-    'boolval, expected_repr',
+    "boolval, expected_repr",
     (
         (True, "HexBytes('0x01')"),
         (False, "HexBytes('0x00')"),
@@ -63,7 +63,7 @@ def test_invalid_integer_inputs(integer):
         HexBytes(integer)
 
     message = str(exc_info.value)
-    assert 'negative' in message
+    assert "negative" in message
     assert str(integer) in message
 
 
@@ -80,13 +80,13 @@ def test_hex_inputs(hex_input):
     if len(hex_input) % 2 == 0:
         even_hex_input = hex_input
     else:
-        even_hex_input = '0' + remove_0x_prefix(hex_input)
+        even_hex_input = "0" + remove_0x_prefix(hex_input)
     expected = decode_hex(even_hex_input)
     assert_equal(wrapped, expected)
 
 
 def test_pretty_output():
-    hb = HexBytes(b'\x0F\x1a')
+    hb = HexBytes(b"\x0F\x1a")
     assert repr(hb) == "HexBytes('0x0f1a')"
 
 
