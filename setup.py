@@ -9,7 +9,7 @@ extras_require = {
     "test": [
         "pytest>=7,<8",
         "pytest-xdist",
-        "tox==3.14.6",
+        "tox>=3.25.1,<4",
         "hypothesis>=3.44.24,<=6.31.6",
         "eth-utils>=1.0.1,<2",
     ],

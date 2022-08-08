@@ -46,7 +46,7 @@ build-docs:
 	$(MAKE) -C docs html
 	$(MAKE) -C docs doctest
 
-validate-docs: build-docs
+validate-docs:
 	python ./newsfragments/validate_files.py
 	towncrier build --draft --version preview
 
