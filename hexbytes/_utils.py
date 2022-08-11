@@ -45,8 +45,10 @@ def hexstr_to_bytes(hexstr: str) -> bytes:
         padded_hex = non_prefixed_hex
 
     try:
-        ascii_hex = padded_hex.encode('ascii')
+        ascii_hex = padded_hex.encode("ascii")
     except UnicodeDecodeError:
-        raise ValueError(f"hex string {padded_hex} may only contain [0-9a-fA-F] characters")
+        raise ValueError(
+            f"hex string {padded_hex} may only contain [0-9a-fA-F] characters"
+        )
     else:
         return binascii.unhexlify(ascii_hex)
