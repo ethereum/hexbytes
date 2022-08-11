@@ -3,6 +3,35 @@ Release Notes
 
 .. towncrier release notes start
 
+HexBytes v0.2.3 (2022-08-11)
+----------------------------
+
+Features
+~~~~~~~~
+
+- Type signature now accepts `memoryview` when creating HexBytes. It converts to a `bytes` internally,
+  so not any performance benefit. But at least it's *possible* now, and mypy stops complaining. (`#22 <https://github.com/ethereum/hexbytes/issues/22>`__)
+
+
+Performance improvements
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Improve speed of the check for 0x at the beginning of the hex string. Similar to changes in
+  eth-utils. (Technically merged by #22, but first posted in #21) (`#21 <https://github.com/ethereum/hexbytes/issues/21>`__)
+
+
+Internal Changes - for hexbytes Contributors
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Merged in latest changes from project template (`#24 <https://github.com/ethereum/hexbytes/issues/24>`__)
+
+
+Miscellaneous changes
+~~~~~~~~~~~~~~~~~~~~~
+
+- `#25 <https://github.com/ethereum/hexbytes/issues/25>`__, `#26 <https://github.com/ethereum/hexbytes/issues/26>`__
+
+
 HexBytes v0.2.2 (2021-08-25)
 ----------------------------
 
