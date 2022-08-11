@@ -1,4 +1,6 @@
+import sys
 from typing import (
+    TYPE_CHECKING,
     Type,
     Union,
     cast,
@@ -8,6 +10,15 @@ from typing import (
 from ._utils import (
     to_bytes,
 )
+
+if TYPE_CHECKING:
+    # remove once hexbytes supports python>=3.8
+    # Types was added to typing in 3.8
+    if sys.version_info >= (3, 8):
+        from typing import SupportsIndex
+    else:
+        from typing_extensions import SupportsIndex  # noqa: F401
+
 
 BytesLike = Union[bool, bytearray, bytes, int, str, memoryview]
 
@@ -21,29 +32,34 @@ class HexBytes(bytes):
         2. Returns hex with prefix '0x' from :meth:`HexBytes.hex`
         3. The representation at console is in hex
     """
+
     def __new__(cls: Type[bytes], val: BytesLike) -> "HexBytes":
         bytesval = to_bytes(val)
         return cast(HexBytes, super().__new__(cls, bytesval))  # type: ignore  # https://github.com/python/typeshed/issues/2630  # noqa: E501
 
-    def hex(self) -> str:
+    def hex(
+        self, sep: Union[str, bytes] = None, bytes_per_sep: "SupportsIndex" = 1
+    ) -> str:
         """
         Output hex-encoded bytes, with an "0x" prefix.
 
         Everything following the "0x" is output exactly like :meth:`bytes.hex`.
         """
-        return '0x' + super().hex()
+        return "0x" + super().hex()
 
     @overload
-    def __getitem__(self, key: int) -> int:
+    def __getitem__(self, key: "SupportsIndex") -> int:  # noqa: F811
         ...
 
     @overload  # noqa: F811
-    def __getitem__(self, key: slice) -> 'HexBytes':
+    def __getitem__(self, key: slice) -> "HexBytes":  # noqa: F811
         ...
 
-    def __getitem__(self, key: Union[int, slice]) -> Union[int, bytes, 'HexBytes']:  # noqa: F811
+    def __getitem__(  # noqa: F811
+        self, key: Union["SupportsIndex", slice]
+    ) -> Union[int, bytes, "HexBytes"]:
         result = super().__getitem__(key)
-        if hasattr(result, 'hex'):
+        if hasattr(result, "hex"):
             return type(self)(result)
         else:
             return result
