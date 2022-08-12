@@ -21,10 +21,9 @@ extras_require = {
         "black>=22,<23",
     ],
     "doc": [
-        "Sphinx>=1.6.5,<2",
+        "Sphinx>=4.0.0,<5",
         "sphinx_rtd_theme>=0.1.9,<1",
         "towncrier>=21,<22",
-        "jinja2>=3.0.0,<3.1.0",  # jinja2<3.0 or >=3.1.0 cause doc build failures.
     ],
     "dev": [
         "bumpversion>=0.5.3,<1",
@@ -59,7 +58,7 @@ setup(
     url="https://github.com/ethereum/hexbytes",
     include_package_data=True,
     install_requires=[],
-    python_requires=">=3.6, <4",
+    python_requires=">=3.7, <4",
     extras_require=extras_require,
     py_modules=["hexbytes"],
     license="MIT",
@@ -75,7 +74,6 @@ setup(
         "Operating System :: MacOS",
         "Operating System :: POSIX",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
