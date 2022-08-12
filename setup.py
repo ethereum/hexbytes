@@ -11,7 +11,7 @@ extras_require = {
         "pytest-xdist",
         "tox>=3.25.1,<4",
         "hypothesis>=3.44.24,<=6.31.6",
-        "eth-utils>=1.0.1,<2",
+        "eth-utils>=1.0.1,<3",
     ],
     "lint": [
         "flake8==3.7.9",
