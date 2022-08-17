@@ -1,1 +1,0 @@
-Remove DeprecationWarning by allowing a higher version of eth-utils

@@ -3,6 +3,21 @@ Release Notes
 
 .. towncrier release notes start
 
+HexBytes v0.3.0 (2022-08-17)
+----------------------------
+
+Miscellaneous changes
+~~~~~~~~~~~~~~~~~~~~~
+
+- `#28 <https://github.com/ethereum/hexbytes/issues/28>`__
+
+
+Breaking changes
+~~~~~~~~~~~~~~~~
+
+- Drop support for Python 3.6, update Sphinx doc dependency requirement (`#27 <https://github.com/ethereum/hexbytes/issues/27>`__)
+
+
 HexBytes v0.2.3 (2022-08-11)
 ----------------------------
 
