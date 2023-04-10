@@ -31,8 +31,8 @@ lint:
 	tox -e lint
 
 lint-roll:
-	isort <MODULE_NAME> tests
-	black <MODULE_NAME> tests setup.py
+	isort hexbytes tests
+	black hexbytes tests setup.py
 	$(MAKE) lint
 
 test:

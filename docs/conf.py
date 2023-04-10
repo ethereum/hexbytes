@@ -54,7 +54,7 @@ source_suffix = ".rst"
 master_doc = "index"
 
 # General information about the project.
-project = "<PROJECT_NAME>"
+project = "HexBytes"
 copyright = "2020, The Ethereum Foundation"
 
 __version__ = setup_version
@@ -190,7 +190,7 @@ html_static_path = ["_static"]
 # html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "<MODULE_NAME>doc"
+htmlhelp_basename = "hexbytesdoc"
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -210,8 +210,8 @@ latex_elements = {
 latex_documents = [
     (
         "index",
-        "<MODULE_NAME>.tex",
-        "<PROJECT_NAME> Documentation",
+        "hexbytes.tex",
+        "HexBytes Documentation",
         "The Ethereum Foundation",
         "manual",
     ),
@@ -245,8 +245,8 @@ latex_documents = [
 man_pages = [
     (
         "index",
-        "<MODULE_NAME>",
-        "<PROJECT_NAME> Documentation",
+        "hexbytes",
+        "HexBytes Documentation",
         ["The Ethereum Foundation"],
         1,
     )
@@ -264,11 +264,11 @@ man_pages = [
 texinfo_documents = [
     (
         "index",
-        "<PROJECT_NAME>",
-        "<PROJECT_NAME> Documentation",
+        "HexBytes",
+        "HexBytes Documentation",
         "The Ethereum Foundation",
-        "<PROJECT_NAME>",
-        "<SHORT_DESCRIPTION>",
+        "HexBytes",
+        "Python `bytes` subclass that decodes hex, with a readable console output",
         "Miscellaneous",
     ),
 ]
