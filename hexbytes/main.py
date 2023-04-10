@@ -15,9 +15,13 @@ if TYPE_CHECKING:
     # remove once hexbytes supports python>=3.8
     # Types was added to typing in 3.8
     if sys.version_info >= (3, 8):
-        from typing import SupportsIndex
+        from typing import (
+            SupportsIndex,
+        )
     else:
-        from typing_extensions import SupportsIndex  # noqa: F401
+        from typing_extensions import (  # noqa: F401
+            SupportsIndex,
+        )
 
 
 BytesLike = Union[bool, bytearray, bytes, int, str, memoryview]
