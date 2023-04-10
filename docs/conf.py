@@ -38,6 +38,7 @@ extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.doctest",
     "sphinx.ext.intersphinx",
+    "sphinx_rtd_theme",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -53,7 +54,7 @@ source_suffix = ".rst"
 master_doc = "index"
 
 # General information about the project.
-project = "HexBytes"
+project = "<PROJECT_NAME>"
 copyright = "2020, The Ethereum Foundation"
 
 __version__ = setup_version
@@ -189,7 +190,7 @@ html_static_path = ["_static"]
 # html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "hexbytesdoc"
+htmlhelp_basename = "<MODULE_NAME>doc"
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -209,8 +210,8 @@ latex_elements = {
 latex_documents = [
     (
         "index",
-        "hexbytes.tex",
-        "HexBytes Documentation",
+        "<MODULE_NAME>.tex",
+        "<PROJECT_NAME> Documentation",
         "The Ethereum Foundation",
         "manual",
     ),
@@ -242,7 +243,13 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ("index", "hexbytes", "HexBytes Documentation", ["The Ethereum Foundation"], 1)
+    (
+        "index",
+        "<MODULE_NAME>",
+        "<PROJECT_NAME> Documentation",
+        ["The Ethereum Foundation"],
+        1,
+    )
 ]
 
 # If true, show URL addresses after external links.
@@ -257,11 +264,11 @@ man_pages = [
 texinfo_documents = [
     (
         "index",
-        "HexBytes",
-        "HexBytes Documentation",
+        "<PROJECT_NAME>",
+        "<PROJECT_NAME> Documentation",
         "The Ethereum Foundation",
-        "hexbytes",
-        "Python `bytes` subclass that decodes hex, with a readable console output",
+        "<PROJECT_NAME>",
+        "<SHORT_DESCRIPTION>",
         "Miscellaneous",
     ),
 ]

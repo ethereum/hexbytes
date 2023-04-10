@@ -1,7 +1,6 @@
 version: 2.0
 
-# heavily inspired by:
-# https://raw.githubusercontent.com/pinax/pinax-wiki/6bd2a99ab6f702e300d708532a6d1d9aa638b9f8/.circleci/config.yml
+# heavily inspired by https://raw.githubusercontent.com/pinax/pinax-wiki/6bd2a99ab6f702e300d708532a6d1d9aa638b9f8/.circleci/config.yml
 
 common: &common
   working_directory: ~/repo
@@ -26,7 +25,7 @@ common: &common
         command: pip install --user tox
     - run:
         name: run tox
-        command: ~/.local/bin/tox -r
+        command: python -m tox -r
     - save_cache:
         paths:
           - .hypothesis
@@ -40,7 +39,7 @@ jobs:
   docs:
     <<: *common
     docker:
-      - image: cimg/python:3.10
+      - image: cimg/python:3.8
         environment:
           TOXENV: docs
   py37-lint:
@@ -91,7 +90,18 @@ jobs:
       - image: cimg/python:3.10
         environment:
           TOXENV: py310-core
-
+  py311-lint:
+    <<: *common
+    docker:
+      - image: cimg/python:3.11
+        environment:
+          TOXENV: py311-lint
+  py311-core:
+    <<: *common
+    docker:
+      - image: cimg/python:3.11
+        environment:
+          TOXENV: py311-core
 workflows:
   version: 2
   test:
@@ -101,7 +111,9 @@ workflows:
       - py38-lint
       - py39-lint
       - py310-lint
+      - py311-lint
       - py37-core
       - py38-core
       - py39-core
       - py310-core
+      - py311-core
