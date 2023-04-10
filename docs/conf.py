@@ -38,6 +38,7 @@ extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.doctest",
     "sphinx.ext.intersphinx",
+    "sphinx_rtd_theme",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -242,7 +243,13 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ("index", "hexbytes", "HexBytes Documentation", ["The Ethereum Foundation"], 1)
+    (
+        "index",
+        "hexbytes",
+        "HexBytes Documentation",
+        ["The Ethereum Foundation"],
+        1,
+    )
 ]
 
 # If true, show URL addresses after external links.
@@ -260,7 +267,7 @@ texinfo_documents = [
         "HexBytes",
         "HexBytes Documentation",
         "The Ethereum Foundation",
-        "hexbytes",
+        "HexBytes",
         "Python `bytes` subclass that decodes hex, with a readable console output",
         "Miscellaneous",
     ),

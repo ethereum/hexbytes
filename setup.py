@@ -7,27 +7,28 @@ from setuptools import (
 
 extras_require = {
     "test": [
-        "pytest>=7,<8",
-        "pytest-xdist",
-        "tox>=3.25.1,<4",
+        "pytest>=7.0.0",
+        "pytest-xdist>=2.4.0",
         "hypothesis>=3.44.24,<=6.31.6",
         "eth-utils>=1.0.1,<3",
     ],
     "lint": [
-        "flake8==3.7.9",
-        "isort>=4.2.15,<5",
+        "flake8==6.0.0",
+        "flake8-bugbear==23.3.23",
+        "isort>=5.10.1",
         "mypy==0.971",
-        "pydocstyle>=5.0.0,<6",
-        "black>=22,<23",
+        "pydocstyle>=5.0.0",
+        "black>=22",
     ],
     "doc": [
-        "Sphinx>=4.0.0,<5",
-        "sphinx_rtd_theme>=0.1.9,<1",
+        "sphinx>=5.0.0",
+        "sphinx_rtd_theme>=1.0.0",
         "towncrier>=21,<22",
     ],
     "dev": [
-        "bumpversion>=0.5.3,<1",
-        "pytest-watch>=4.1.0,<5",
+        "bumpversion>=0.5.3",
+        "pytest-watch>=4.1.0",
+        "tox>=4.0.0",
         "wheel",
         "twine",
         "ipython",
@@ -78,5 +79,6 @@ setup(
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
     ],
 )
