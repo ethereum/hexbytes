@@ -13,8 +13,8 @@ extras_require = {
         "eth-utils>=1.0.1,<3",
     ],
     "lint": [
-        "flake8>=5.0.0",
-        "flake8-bugbear>=22.0.0",
+        "flake8==6.0.0",
+        "flake8-bugbear==23.3.23",
         "isort>=5.10.1",
         "mypy==0.971",
         "pydocstyle>=5.0.0",
