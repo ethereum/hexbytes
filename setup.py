@@ -27,6 +27,7 @@ extras_require = {
     ],
     "dev": [
         "bumpversion>=0.5.3",
+        "build>=0.9.0",
         "pytest-watch>=4.1.0",
         "tox>=4.0.0",
         "wheel",
