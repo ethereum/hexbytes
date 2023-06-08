@@ -3,6 +3,21 @@ Release Notes
 
 .. towncrier release notes start
 
+HexBytes v0.3.1 (2023-06-08)
+----------------------------
+
+Improved Documentation
+~~~~~~~~~~~~~~~~~~~~~~
+
+- pull in ethereum-python-project-template updates (`#31 <https://github.com/ethereum/hexbytes/issues/31>`__)
+
+
+Internal Changes - for hexbytes Contributors
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- pull in ethereum-python-project-template updates (`#31 <https://github.com/ethereum/hexbytes/issues/31>`__)
+
+
 HexBytes v0.3.0 (2022-08-17)
 ----------------------------
 
