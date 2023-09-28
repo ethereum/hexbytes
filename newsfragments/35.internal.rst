@@ -1,0 +1,1 @@
+Change to using ``pre-commit`` to manage linting tools
