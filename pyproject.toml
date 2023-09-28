@@ -1,15 +1,15 @@
 [tool.towncrier]
-# Read https://github.com/ethereum/hexbytes/newsfragments/README.md for instructions
-package = "hexbytes"
+# Read https://github.com/ethereum/<REPO_NAME>/blob/main/newsfragments/README.md for instructions
+package = "<MODULE_NAME>"
 filename = "docs/release_notes.rst"
 directory = "newsfragments"
 underlines = ["-", "~", "^"]
-title_format = "HexBytes v{version} ({project_date})"
-issue_format = "`#{issue} <https://github.com/ethereum/hexbytes/issues/{issue}>`__"
+title_format = "<REPO_NAME> v{version} ({project_date})"
+issue_format = "`#{issue} <https://github.com/ethereum/<REPO_NAME>/issues/{issue}>`__"
 
 [[tool.towncrier.type]]
-directory = "feature"
-name = "Features"
+directory = "breaking"
+name = "Breaking Changes"
 showcontent = true
 
 [[tool.towncrier.type]]
@@ -18,18 +18,18 @@ name = "Bugfixes"
 showcontent = true
 
 [[tool.towncrier.type]]
-directory = "performance"
-name = "Performance improvements"
+directory = "deprecation"
+name = "Deprecations"
 showcontent = true
 
 [[tool.towncrier.type]]
-directory = "doc"
+directory = "docs"
 name = "Improved Documentation"
 showcontent = true
 
 [[tool.towncrier.type]]
-directory = "removal"
-name = "Deprecations and Removals"
+directory = "feature"
+name = "Features"
 showcontent = true
 
 [[tool.towncrier.type]]
@@ -39,10 +39,15 @@ showcontent = true
 
 [[tool.towncrier.type]]
 directory = "misc"
-name = "Miscellaneous changes"
+name = "Miscellaneous Changes"
 showcontent = false
 
 [[tool.towncrier.type]]
-directory = "breaking"
-name = "Breaking changes"
+directory = "performance"
+name = "Performance Improvements"
+showcontent = true
+
+[[tool.towncrier.type]]
+directory = "removal"
+name = "Removals"
 showcontent = true

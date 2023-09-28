@@ -9,19 +9,17 @@ extras_require = {
     "test": [
         "pytest>=7.0.0",
         "pytest-xdist>=2.4.0",
-        "hypothesis>=3.44.24,<=6.31.6",
-        "eth-utils>=1.0.1,<3",
     ],
     "lint": [
-        "flake8==6.0.0",
-        "flake8-bugbear==23.3.23",
+        "flake8==6.0.0",  # flake8 claims semver but adds new warnings at minor releases, leave it pinned.
+        "flake8-bugbear==23.3.23",  # flake8-bugbear does not follow semver, leave it pinned.
         "isort>=5.10.1",
-        "mypy==0.971",
-        "pydocstyle>=5.0.0",
-        "black>=22",
+        "mypy==0.971",  # mypy does not follow semver, leave it pinned.
+        "pydocstyle>=6.0.0",
+        "black>=23",
     ],
-    "doc": [
-        "sphinx>=5.0.0",
+    "docs": [
+        "sphinx>=6.0.0",
         "sphinx_rtd_theme>=1.0.0",
         "towncrier>=21,<22",
     ],
@@ -30,6 +28,7 @@ extras_require = {
         "build>=0.9.0",
         "pytest-watch>=4.1.0",
         "tox>=4.0.0",
+        "build>=0.9.0",
         "wheel",
         "twine",
         "ipython",
@@ -40,7 +39,7 @@ extras_require["dev"] = (
     extras_require["dev"]
     + extras_require["test"]
     + extras_require["lint"]
-    + extras_require["doc"]
+    + extras_require["docs"]
 )
 
 
@@ -73,8 +72,6 @@ setup(
         "Intended Audience :: Developers",
         "License :: OSI Approved :: MIT License",
         "Natural Language :: English",
-        "Operating System :: MacOS",
-        "Operating System :: POSIX",
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
