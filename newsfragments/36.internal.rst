@@ -1,0 +1,1 @@
+Merge project template updates and bump mypy to v1.5.1

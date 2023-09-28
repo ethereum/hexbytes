@@ -7,6 +7,8 @@ from setuptools import (
 
 extras_require = {
     "test": [
+        "eth_utils>=2.0.0",
+        "hypothesis>=3.44.24,<=6.31.6",
         "pytest>=7.0.0",
         "pytest-xdist>=2.4.0",
     ],
@@ -14,7 +16,7 @@ extras_require = {
         "flake8==6.0.0",  # flake8 claims semver but adds new warnings at minor releases, leave it pinned.
         "flake8-bugbear==23.3.23",  # flake8-bugbear does not follow semver, leave it pinned.
         "isort>=5.10.1",
-        "mypy==0.971",  # mypy does not follow semver, leave it pinned.
+        "mypy==1.5.1",  # mypy does not follow semver, leave it pinned.
         "pydocstyle>=6.0.0",
         "black>=23",
     ],
@@ -59,7 +61,7 @@ setup(
     url="https://github.com/ethereum/hexbytes",
     include_package_data=True,
     install_requires=[],
-    python_requires=">=3.7, <4",
+    python_requires=">=3.8, <4",
     extras_require=extras_require,
     py_modules=["hexbytes"],
     license="MIT",
@@ -73,7 +75,6 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Natural Language :: English",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
