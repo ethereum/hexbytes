@@ -6,44 +6,31 @@ from setuptools import (
 )
 
 extras_require = {
-    "test": [
-        "eth_utils>=2.0.0",
-        "hypothesis>=3.44.24,<=6.31.6",
-        "pytest>=7.0.0",
-        "pytest-xdist>=2.4.0",
-    ],
-    "lint": [  # keep versions in sync with .pre-commit-config.yaml
-        "flake8==3.9.2",  # flake8 claims semver but adds new warnings at minor releases, leave it pinned.
-        "flake8-bugbear==23.3.12",  # flake8-bugbear does not follow semver, leave it pinned.
-        "isort==5.12.0",
-        "mypy==1.4.1",  # mypy does not follow semver, leave it pinned.
-        "pydocstyle==6.3.0",
-        "black==22.10.0",
-        "mdformat==0.7.17",
+    "dev": [
+        "build>=0.9.0",
+        "bumpversion>=0.5.3",
+        "ipython",
+        "pre-commit>=3.4.0",
+        "pytest-watch>=4.1.0",
+        "tox>=4.0.0",
+        "twine",
+        "wheel",
     ],
     "docs": [
         "sphinx>=5.3.0",
         "sphinx_rtd_theme>=1.0.0",
         "towncrier>=21,<22",
     ],
-    "dev": [
-        "bumpversion>=0.5.3",
-        "build>=0.9.0",
-        "pre-commit>=3.4.0",
-        "pytest-watch>=4.1.0",
-        "tox>=4.0.0",
-        "build>=0.9.0",
-        "wheel",
-        "twine",
-        "ipython",
+    "test": [
+        "eth_utils>=2.0.0",
+        "hypothesis>=3.44.24,<=6.31.6",
+        "pytest>=7.0.0",
+        "pytest-xdist>=2.4.0",
     ],
 }
 
 extras_require["dev"] = (
-    extras_require["dev"]
-    + extras_require["test"]
-    + extras_require["lint"]
-    + extras_require["docs"]
+    extras_require["dev"] + extras_require["docs"] + extras_require["test"]
 )
 
 
@@ -53,9 +40,9 @@ with open("./README.md") as readme:
 
 setup(
     name="hexbytes",
-    # *IMPORTANT*: Don't manually change the version here. Use `make bump`, as described in readme  # noqa: E501
+    # *IMPORTANT*: Don't manually change the version here. Use `make bump`, as described in readme
     version="0.3.1",
-    description="""hexbytes: Python `bytes` subclass that decodes hex, with a readable console output""",  # noqa: E501
+    description="""hexbytes: Python `bytes` subclass that decodes hex, with a readable console output""",
     long_description=long_description,
     long_description_content_type="text/markdown",
     author="The Ethereum Foundation",
