@@ -1,10 +1,10 @@
 # HexBytes
 
+[![Join the conversation on Discord](https://img.shields.io/discord/809793915578089484?color=blue&label=chat&logo=discord&logoColor=white)](https://discord.gg/GHryRvPB84)
 [![Build Status](https://circleci.com/gh/ethereum/hexbytes.svg?style=shield)](https://circleci.com/gh/ethereum/hexbytes)
 [![PyPI version](https://badge.fury.io/py/hexbytes.svg)](https://badge.fury.io/py/hexbytes)
 [![Python versions](https://img.shields.io/pypi/pyversions/hexbytes.svg)](https://pypi.python.org/pypi/hexbytes)
-[![Docs build](https://readthedocs.org/projects/hexbytes/badge/?version=latest)](http://hexbytes.readthedocs.io/en/latest/?badge=latest)
-   
+[![Docs build](https://readthedocs.org/projects/hexbytes/badge/?version=latest)](https://hexbytes.readthedocs.io/en/latest/?badge=latest)
 
 Python `bytes` subclass that decodes hex, with a readable console output
 
@@ -13,7 +13,7 @@ Read more in the [documentation on ReadTheDocs](https://hexbytes.readthedocs.io/
 ## Quickstart
 
 ```sh
-pip install hexbytes
+pythom -m pip install hexbytes
 ```
 
 ```py
@@ -58,7 +58,7 @@ git clone git@github.com:carver/hexbytes.git
 cd hexbytes
 virtualenv -p python3 venv
 . venv/bin/activate
-pip install -e ".[dev]"
+python -m pip install -e ".[dev]"
 ```
 
 ### Release setup
