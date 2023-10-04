@@ -8,6 +8,7 @@
 *.egg-info
 dist
 build
+.build
 eggs
 .eggs
 parts
@@ -73,6 +74,9 @@ logs
 
 # pyenv
 .python-version
+
+# vs-code
+.vscode
 
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and Webstorm
 # For a more precise, explicit template, see:

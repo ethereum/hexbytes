@@ -1,0 +1,1 @@
+Merge template - .gitignore updates and other fixes
