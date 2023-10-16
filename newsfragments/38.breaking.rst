@@ -1,0 +1,1 @@
+Move HexBytes prepend of ``0x`` from ``hex`` method to ``__repr__`` to not break ``hex`` of parent ``bytes`` class

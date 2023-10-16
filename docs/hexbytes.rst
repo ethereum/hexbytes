@@ -8,11 +8,11 @@ Install with:
 
 .. code-block:: bash
 
-    pip install hexbytes
+    python -m pip install hexbytes
 
 Example :class:`~hexbytes.main.HexBytes` usage:
 
-::
+.. doctest::
 
     >>> from hexbytes import HexBytes
 
@@ -22,7 +22,15 @@ Example :class:`~hexbytes.main.HexBytes` usage:
 
     # HexBytes accepts the hex string representation as well, ignoring case and 0x prefixes
     >>> hb = HexBytes('03087766BF68E78671D1EA436AE087DA74A12761DAC020011A9EDDC4900BF13B')
+    >>> hb
     HexBytes('0x03087766bf68e78671d1ea436ae087da74a12761dac020011a9eddc4900bf13b')
+
+    # HexBytes does not override the .hex() or __str__ methods of the parent `bytes` type
+    >>> hb = HexBytes('03087766BF68E78671D1EA436AE087DA74A12761DAC020011A9EDDC4900BF13B')
+    >>> hb.hex()
+    '03087766bf68e78671d1ea436ae087da74a12761dac020011a9eddc4900bf13b'
+    >>> print(hb)
+    b"\x03\x08wf\xbfh\xe7\x86q\xd1\xeaCj\xe0\x87\xdat\xa1'a\xda\xc0 \x01\x1a\x9e\xdd\xc4\x90\x0b\xf1;"
 
     # get the first byte:
     >>> hb[0]

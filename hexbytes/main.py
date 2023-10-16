@@ -31,26 +31,15 @@ class HexBytes(bytes):
     """
     HexBytes is a *very* thin wrapper around the python built-in :class:`bytes` class.
 
-    It has these three changes:
+    It has these changes:
         1. Accepts more initializing values, like hex strings, non-negative integers,
            and booleans
-        2. Returns hex with prefix '0x' from :meth:`HexBytes.hex`
-        3. The representation at console is in hex
+        2. The representation at console (__repr__) is 0x-prefixed
     """
 
     def __new__(cls: Type[bytes], val: BytesLike) -> "HexBytes":
         bytesval = to_bytes(val)
         return cast(HexBytes, super().__new__(cls, bytesval))  # type: ignore  # https://github.com/python/typeshed/issues/2630  # noqa: E501
-
-    def hex(
-        self, sep: Union[str, bytes] = None, bytes_per_sep: "SupportsIndex" = 1
-    ) -> str:
-        """
-        Output hex-encoded bytes, with an "0x" prefix.
-
-        Everything following the "0x" is output exactly like :meth:`bytes.hex`.
-        """
-        return "0x" + super().hex()
 
     @overload
     def __getitem__(self, key: "SupportsIndex") -> int:  # noqa: F811
@@ -70,4 +59,4 @@ class HexBytes(bytes):
             return result
 
     def __repr__(self) -> str:
-        return f"HexBytes({self.hex()!r})"
+        return f"HexBytes({'0x' + self.hex()!r})"

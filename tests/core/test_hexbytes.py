@@ -90,6 +90,11 @@ def test_pretty_output():
     assert repr(hb) == "HexBytes('0x0f1a')"
 
 
+def test_does_not_break_bytes_hex():
+    hb = HexBytes(b"\x0F\x1a")
+    assert hb.hex() == "0f1a"
+
+
 @given(st.binary(), st.integers())
 def test_hexbytes_index(primitive, index):
     hexbytes = HexBytes(primitive)
