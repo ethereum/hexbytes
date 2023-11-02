@@ -3,6 +3,25 @@ Release Notes
 
 .. towncrier release notes start
 
+hexbytes v1.0.0 (2023-11-02)
+----------------------------
+
+Breaking Changes
+~~~~~~~~~~~~~~~~
+
+- Move HexBytes prepend of ``0x`` from ``hex`` method to ``__repr__`` to not break ``hex`` of parent ``bytes`` class (`#38 <https://github.com/ethereum/hexbytes/issues/38>`__)
+
+
+Internal Changes - for hexbytes Contributors
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Added missing `build` dependency. (`#32 <https://github.com/ethereum/hexbytes/issues/32>`__)
+- Add ``build.os`` config for readthedocs (`#34 <https://github.com/ethereum/hexbytes/issues/34>`__)
+- Change to using ``pre-commit`` to manage linting tools (`#35 <https://github.com/ethereum/hexbytes/issues/35>`__)
+- Merge project template updates and bump mypy to v1.5.1 (`#36 <https://github.com/ethereum/hexbytes/issues/36>`__)
+- Merge template - .gitignore updates and other fixes (`#37 <https://github.com/ethereum/hexbytes/issues/37>`__)
+
+
 HexBytes v0.3.1 (2023-06-08)
 ----------------------------
 
