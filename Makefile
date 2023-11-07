@@ -67,7 +67,9 @@ notes: check-bump
 
 release: check-bump clean
 	# require that upstream is configured for ethereum/hexbytes
-	git remote -v | grep "upstream\tgit@github.com:ethereum/hexbytes.git (push)\|upstream\thttps://github.com/ethereum/hexbytes (push)"
+	@git remote -v | grep \
+		-e "upstream\tgit@github.com:ethereum/hexbytes.git (push)" \
+		-Ee "upstream\thttps://(www.)?github.com/ethereum/hexbytes \(push\)"
 	# verify that docs build correctly
 	./newsfragments/validate_files.py is-empty
 	make build-docs
