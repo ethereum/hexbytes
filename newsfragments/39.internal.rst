@@ -1,1 +1,0 @@
-Merge template updates, including additional linting, move most lint config to pyproject.toml
