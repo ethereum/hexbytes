@@ -39,11 +39,17 @@ build-docs:
 	$(MAKE) -C docs html
 	$(MAKE) -C docs doctest
 
-validate-docs:
+build-docs-ci:
+	$(MAKE) -C docs latexpdf
+	$(MAKE) -C docs epub
+
+validate-newsfragments:
 	python ./newsfragments/validate_files.py
 	towncrier build --draft --version preview
 
-check-docs: build-docs validate-docs
+check-docs: build-docs validate-newsfragments
+
+check-docs-ci: build-docs build-docs-ci validate-newsfragments
 
 docs: check-docs
 	open docs/_build/html/index.html
@@ -67,9 +73,7 @@ notes: check-bump
 
 release: check-bump clean
 	# require that upstream is configured for ethereum/hexbytes
-	@git remote -v | grep \
-		-e "upstream\tgit@github.com:ethereum/hexbytes.git (push)" \
-		-Ee "upstream\thttps://(www.)?github.com/ethereum/hexbytes \(push\)"
+	@git remote -v | grep -E "upstream\tgit@github.com:ethereum/hexbytes.git \(push\)|upstream\thttps://(www.)?github.com/ethereum/hexbytes \(push\)"
 	# verify that docs build correctly
 	./newsfragments/validate_files.py is-empty
 	make build-docs
