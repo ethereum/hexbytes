@@ -3,6 +3,16 @@ Release Notes
 
 .. towncrier release notes start
 
+hexbytes v1.1.0 (2024-03-01)
+----------------------------
+
+Internal Changes - for hexbytes Contributors
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Change the name of ``master`` branch to ``main`` (`#40 <https://github.com/ethereum/hexbytes/issues/40>`__)
+- Merge template updates, notably adding py312 support (`#41 <https://github.com/ethereum/hexbytes/issues/41>`__)
+
+
 hexbytes v1.0.0 (2023-11-07)
 ----------------------------
 
