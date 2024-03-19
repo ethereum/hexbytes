@@ -3,6 +3,15 @@ Release Notes
 
 .. towncrier release notes start
 
+hexbytes v1.2.0 (2024-03-19)
+----------------------------
+
+Features
+~~~~~~~~
+
+- Add ``to_0x_hex()`` method to provide a quick, explicit way to get an 0x-prefixed string (`#43 <https://github.com/ethereum/hexbytes/issues/43>`__)
+
+
 hexbytes v1.1.0 (2024-03-01)
 ----------------------------
 
