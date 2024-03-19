@@ -1,0 +1,1 @@
+Add ``to_0x_hex()`` method to provide a quick, explicit way to get an 0x-prefixed string
