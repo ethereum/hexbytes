@@ -32,6 +32,11 @@ Example :class:`~hexbytes.main.HexBytes` usage:
     >>> print(hb)
     b"\x03\x08wf\xbfh\xe7\x86q\xd1\xeaCj\xe0\x87\xdat\xa1'a\xda\xc0 \x01\x1a\x9e\xdd\xc4\x90\x0b\xf1;"
 
+    # Use the `to_0x_hex` method to get a 0x-prefixed hex string
+    >>> hb.to_0x_hex()
+    '0x03087766bf68e78671d1ea436ae087da74a12761dac020011a9eddc4900bf13b'
+
+
     # get the first byte:
     >>> hb[0]
     3

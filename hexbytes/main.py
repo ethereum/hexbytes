@@ -26,7 +26,8 @@ class HexBytes(bytes):
         1. Accepts more initializing values, like hex strings, non-negative integers,
            and booleans
         2. The representation at console (__repr__) is 0x-prefixed
-    """
+        3. The to_0x_hex method is added to convert the bytes to a 0x-prefixed hex string
+    """  # noqa: E501
 
     def __new__(cls: Type[bytes], val: BytesLike) -> "HexBytes":
         bytesval = to_bytes(val)
@@ -51,3 +52,9 @@ class HexBytes(bytes):
 
     def __repr__(self) -> str:
         return f"HexBytes({'0x' + self.hex()!r})"
+
+    def to_0x_hex(self) -> str:
+        """
+        Convert the bytes to a 0x-prefixed hex string
+        """
+        return "0x" + self.hex()
