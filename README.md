@@ -13,7 +13,7 @@ Read more in the [documentation on ReadTheDocs](https://hexbytes.readthedocs.io/
 ## Quickstart
 
 ```sh
-pythom -m pip install hexbytes
+python -m pip install hexbytes
 ```
 
 ```py
@@ -38,7 +38,7 @@ HexBytes('0x03087766bf68e78671d1ea436ae087da74a12761dac020011a9eddc4900bf13b')
 b"\x03\x08wf\xbfh\xe7\x86q\xd1\xeaCj\xe0\x87\xdat\xa1'a\xda\xc0 \x01\x1a\x9e\xdd\xc4\x90\x0b\xf1;"
 ```
 
-## Developer Setup
+## Contributing
 
 If you would like to hack on hexbytes, please check out the [Snake Charmers
 Tactical Manual](https://github.com/ethereum/snake-charmers-tactical-manual)
@@ -55,36 +55,78 @@ can do so with `git commit --no-verify`.
 
 ### Development Environment Setup
 
-You can set up your dev environment with:
+To get started, fork the repository to your own github account, then clone it to your
+development machine:
 
 ```sh
-git clone git@github.com:carver/hexbytes.git
+git clone git@github.com:your-github-username/hexbytes.git
+```
+
+Next, install the development dependencies. We recommend using a virtual environment,
+such as [`virtualenv`](https://virtualenv.pypa.io/en/stable/)
+
+```sh
 cd hexbytes
-virtualenv -p python3 venv
+virtualenv -p python venv
 . venv/bin/activate
 python -m pip install -e ".[dev]"
 pre-commit install
 ```
 
-### Release setup
+### Releasing a New Version
 
-To release a new version:
+Cutting a new release has 3 steps which should be executed in this order:
+
+1. Build and test the package
+1. Compile the release notes
+1. Build the final release and push to pypi and github
+
+#### Build and Test the Package
 
 ```sh
-make release bump=$$VERSION_PART_TO_BUMP$$
+make package-test
 ```
 
-#### How to bumpversion
+This will build the package and run some basic tests against it in a virtualenv.
+
+#### Compile Release Notes
+
+```sh
+make notes bump=VERSION_PART_TO_BUMP
+```
+
+This will compile all the newsfragments and generate release notes for the version
+you are releasing.
+
+#### Build and Push New Version to pypi and github
+
+```sh
+make release bump=VERSION_PART_TO_BUMP
+```
+
+This command will:
+
+- Bump the version number as specified.
+- Create a git commit and tag for the new version.
+- Build the package.
+- Push the commit and tag to github.
+- Push the new package files to pypi.
+
+### About Bumping the Version
+
+`VERSION_PART_TO_BUMP` must be one of: `major`, `minor`, `patch`, `stage`, or `devnum`.
 
 The version format for this repo is `{major}.{minor}.{patch}` for stable, and
 `{major}.{minor}.{patch}-{stage}.{devnum}` for unstable (`stage` can be alpha or beta).
 
-To issue the next version in line, specify which part to bump,
-like `make release bump=minor` or `make release bump=devnum`. This is typically done from the
+To issue the next version in line, specify which part to bump, like
+`make notes bump=minor` or `make notes bump=devnum`. This is typically done from the
 main branch, except when releasing a beta (in which case the beta is released from main,
 and the previous stable branch is released from said branch).
 
-If you are in a beta version, `make release bump=stage` will switch to a stable.
+If you are in a beta version, `make notes bump=stage` will switch to a stable.
 
-To issue an unstable version when the current version is stable, specify the
-new version explicitly, like `make release bump="--new-version 4.0.0-alpha.1 devnum"`
+To issue an unstable version when the current version is stable, specify the new version explicitly, like `make release bump="--new-version 4.0.0-alpha.1"`
+
+You can see what the result of bumping any particular version part would be with
+`bump-my-version show-bump`

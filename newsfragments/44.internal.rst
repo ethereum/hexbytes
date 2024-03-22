@@ -1,0 +1,1 @@
+Drop `bumpversion` for `bump-my-version` and add `make package-test` to build and test the package before pushing to pypi. Add new release process to Contibuting in README.
