@@ -1,14 +1,5 @@
-hexbytes package
-================
-
-Quickstart
-------------
-
-Install with:
-
-.. code-block:: bash
-
-    python -m pip install hexbytes
+Usage
+-----
 
 Example :class:`~hexbytes.main.HexBytes` usage:
 
@@ -24,15 +15,18 @@ Example :class:`~hexbytes.main.HexBytes` usage:
     >>> hb = HexBytes('03087766BF68E78671D1EA436AE087DA74A12761DAC020011A9EDDC4900BF13B')
     >>> hb
     HexBytes('0x03087766bf68e78671d1ea436ae087da74a12761dac020011a9eddc4900bf13b')
+    >>> hb = HexBytes('0x03087766BF68E78671D1EA436AE087DA74A12761DAC020011A9EDDC4900BF13B')
+    >>> hb
+    HexBytes('0x03087766bf68e78671d1ea436ae087da74a12761dac020011a9eddc4900bf13b')
 
-    # HexBytes does not override the .hex() or __str__ methods of the parent `bytes` type
+    # HexBytes does not override the .hex() or __str__ methods of the parent bytes type
     >>> hb = HexBytes('03087766BF68E78671D1EA436AE087DA74A12761DAC020011A9EDDC4900BF13B')
     >>> hb.hex()
     '03087766bf68e78671d1ea436ae087da74a12761dac020011a9eddc4900bf13b'
     >>> print(hb)
     b"\x03\x08wf\xbfh\xe7\x86q\xd1\xeaCj\xe0\x87\xdat\xa1'a\xda\xc0 \x01\x1a\x9e\xdd\xc4\x90\x0b\xf1;"
 
-    # Use the `to_0x_hex` method to get a 0x-prefixed hex string
+    # Use the to_0x_hex method to get a 0x-prefixed hex string
     >>> hb.to_0x_hex()
     '0x03087766bf68e78671d1ea436ae087da74a12761dac020011a9eddc4900bf13b'
 
@@ -41,16 +35,21 @@ Example :class:`~hexbytes.main.HexBytes` usage:
     >>> hb[0]
     3
 
+    # get the first 5 bytes:
+    >>> hb[:5]
+    HexBytes('0x03087766bf')
+
     # show how many bytes are in the value
     >>> len(hb)
     32
 
-    # cast back to the basic `bytes` type
+    # cast back to the basic bytes type
     >>> bytes(hb)
     b"\x03\x08wf\xbfh\xe7\x86q\xd1\xeaCj\xe0\x87\xdat\xa1'a\xda\xc0 \x01\x1a\x9e\xdd\xc4\x90\x0b\xf1;"
 
+
 HexBytes
----------------------
+--------
 
 .. automodule:: hexbytes.main
     :members:

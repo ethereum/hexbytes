@@ -42,19 +42,8 @@ def test_install_local_wheel() -> None:
         wheel_path = find_wheel(Path("."))
         install_wheel(venv_path, wheel_path)
         print("Installed", wheel_path.absolute(), "to", venv_path)
-
-        package_tests = Path("./scripts/release/tests_to_run_on_package.py")
-
-        result = subprocess.run(
-            [venv_path / "bin" / "python", package_tests],
-            capture_output=True,
-            text=True,
-        )
-
-        if result.returncode == 0:
-            print("Tests Passed:", result.stdout)
-        else:
-            print("Error in package testing:", result.stderr)
+        print(f"Activate with `source {venv_path}/bin/activate`")
+        input("Press enter when the test has completed. The directory will be deleted.")
 
 
 if __name__ == "__main__":
