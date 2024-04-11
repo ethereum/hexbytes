@@ -87,7 +87,6 @@ release: check-bump check-git clean
 	python -m build
 	git config commit.gpgSign "$(CURRENT_SIGN_SETTING)"
 	git push upstream && git push upstream --tags
-	python -m build
 	twine upload dist/*
 
 # release helpers

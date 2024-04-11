@@ -20,14 +20,14 @@ BytesLike = Union[bool, bytearray, bytes, int, str, memoryview]
 
 class HexBytes(bytes):
     """
-    HexBytes is a *very* thin wrapper around the python built-in :class:`bytes` class.
+    Thin wrapper around the python built-in :class:`bytes` class.
 
     It has these changes:
-        1. Accepts more initializing values, like hex strings, non-negative integers,
-           and booleans
+        1. Accepts more initializing values: bool, bytearray, bytes, (non-negative) int,
+           str, and memoryview
         2. The representation at console (__repr__) is 0x-prefixed
-        3. The to_0x_hex method is added to convert the bytes to a 0x-prefixed hex string
-    """  # noqa: E501
+        3. ``to_0x_hex`` returns a 0x-prefixed hex string
+    """
 
     def __new__(cls: Type[bytes], val: BytesLike) -> "HexBytes":
         bytesval = to_bytes(val)
