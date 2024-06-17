@@ -3,6 +3,28 @@ Release Notes
 
 .. towncrier release notes start
 
+hexbytes v1.2.1 (2024-06-17)
+----------------------------
+
+Improved Documentation
+~~~~~~~~~~~~~~~~~~~~~~
+
+- Update docs structure, adding Contribution and Code of Conduct sections (`#44 <https://github.com/ethereum/hexbytes/issues/44>`__)
+
+
+Internal Changes - for hexbytes Contributors
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Drop ``bumpversion`` for ``bump-my-version`` and add ``make package-test`` to build and test the package before pushing to pypi. (`#44 <https://github.com/ethereum/hexbytes/issues/44>`__)
+- Run ``mypy`` with local deps installed instead of ``pre-commit`` ``mirrors-mypy`` hook. (`#47 <https://github.com/ethereum/hexbytes/issues/47>`__)
+
+
+Miscellaneous Changes
+~~~~~~~~~~~~~~~~~~~~~
+
+- `#46 <https://github.com/ethereum/hexbytes/issues/46>`__
+
+
 hexbytes v1.2.0 (2024-03-19)
 ----------------------------
 

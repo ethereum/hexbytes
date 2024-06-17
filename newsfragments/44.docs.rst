@@ -1,1 +1,0 @@
-Update docs structure, adding Contribution and Code of Conduct sections
