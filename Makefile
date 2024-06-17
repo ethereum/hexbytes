@@ -97,11 +97,6 @@ ifndef bump
 endif
 
 check-git:
-	# require that you be on a branch that's linked to upstream/main
-	@if ! git status -s -b | head -1 | grep -q "\.\.upstream/main"; then \
-		echo "Error: You must be on a branch that's linked to upstream/main"; \
-		exit 1; \
-	fi
 	# require that upstream is configured for ethereum/hexbytes
 	@if ! git remote -v | grep "upstream[[:space:]]git@github.com:ethereum/hexbytes.git (push)\|upstream[[:space:]]https://github.com/ethereum/hexbytes (push)"; then \
 		echo "Error: You must have a remote named 'upstream' that points to 'hexbytes'"; \

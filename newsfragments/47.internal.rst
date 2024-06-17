@@ -1,0 +1,1 @@
+Run ``mypy`` with local deps installed instead of ``pre-commit`` ``mirrors-mypy`` hook.
