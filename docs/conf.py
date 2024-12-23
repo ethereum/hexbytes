@@ -1,6 +1,4 @@
-# -*- coding: utf-8 -*-
-#
-# HexBytes documentation build configuration file, created by
+# <PROJECT_NAME> documentation build configuration file, created by
 # sphinx-quickstart on Thu Oct 16 20:43:24 2014.
 #
 # This file is execfile()d with the current directory set to its
@@ -19,7 +17,7 @@
 
 import os
 
-DIR = os.path.dirname("__file__")
+DIR = os.path.dirname(__file__)
 with open(os.path.join(DIR, "../setup.py"), "r") as f:
     for line in f:
         if "version=" in line:
@@ -195,14 +193,16 @@ htmlhelp_basename = "hexbytesdocs"
 
 # -- Options for LaTeX output ---------------------------------------------
 
-# latex_elements = {
-#   # The paper size ('letterpaper' or 'a4paper').
-#   'papersize': 'letterpaper',
-#   # The font size ('10pt', '11pt' or '12pt').
-#   'pointsize': '10pt',
-#   # Additional stuff for the LaTeX preamble.
-#   'preamble': '',
-# }
+latex_engine = "xelatex"
+
+latex_elements = {
+    # The paper size ('letterpaper' or 'a4paper').
+    #'papersize': 'letterpaper',
+    # The font size ('10pt', '11pt' or '12pt').
+    #'pointsize': '10pt',
+    # Additional stuff for the LaTeX preamble.
+    #'preamble': '',
+}
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,

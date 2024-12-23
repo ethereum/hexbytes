@@ -16,7 +16,8 @@ extras_require = {
         "wheel",
     ],
     "docs": [
-        "sphinx>=5.3.0",
+        "sphinx>=6.0.0",
+        "sphinx-autobuild>=2021.3.14",
         "sphinx_rtd_theme>=1.0.0",
         "towncrier>=24,<25",
     ],
@@ -39,7 +40,7 @@ with open("./README.md") as readme:
 
 setup(
     name="hexbytes",
-    # *IMPORTANT*: Don't manually change the version here. Use `make bump`, as described in readme
+    # *IMPORTANT*: Don't manually change the version here. See Contributing docs for the release process.
     version="1.2.1",
     description="""hexbytes: Python `bytes` subclass that decodes hex, with a readable console output""",
     long_description=long_description,
@@ -55,7 +56,7 @@ setup(
     license="MIT",
     zip_safe=False,
     keywords="ethereum",
-    packages=find_packages(exclude=["tests", "tests.*"]),
+    packages=find_packages(exclude=["scripts", "scripts.*", "tests", "tests.*"]),
     package_data={"hexbytes": ["py.typed"]},
     classifiers=[
         "Development Status :: 5 - Production/Stable",
@@ -68,5 +69,6 @@ setup(
         "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.11",
         "Programming Language :: Python :: 3.12",
+        "Programming Language :: Python :: 3.13",
     ],
 )

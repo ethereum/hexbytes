@@ -13,8 +13,7 @@ development machine:
 
 .. code:: sh
 
-    git clone git@github.com:your-github-username/hexbytes.git
-
+    git clone git@github.com:your-github-username/<REPO_NAME>.git
 
 Next, install the development dependencies. We recommend using a virtual environment,
 such as `virtualenv <https://virtualenv.pypa.io/en/stable/>`_.
@@ -38,7 +37,6 @@ We can run all tests with:
 
     pytest tests
 
-
 Code Style
 ~~~~~~~~~~
 
@@ -49,7 +47,6 @@ manually with:
 .. code:: sh
 
     make lint
-
 
 If you need to make a commit that skips the ``pre-commit`` checks, you can do so with
 ``git commit --no-verify``.
@@ -74,7 +71,7 @@ a discussion, and doesn't necessarily need to be the final, finished submission.
 GitHub's documentation for working on pull requests is
 `available here <https://docs.github.com/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests>`_.
 
-Once you've made a pull request take a look at the Circle CI build status in the
+Once you've made a pull request, take a look at the Circle CI build status in the
 GitHub interface and make sure all tests are passing. In general pull requests that
 do not pass the CI build yet won't get reviewed unless explicitly requested.
 
@@ -100,9 +97,7 @@ Before releasing a new version, build and test the package that will be released
 .. code:: sh
 
     git checkout main && git pull
-
     make package-test
-
 
 This will build the package and install it in a temporary virtual environment. Follow
 the instructions to activate the venv and test whatever you think is important.
@@ -112,7 +107,6 @@ You can also preview the release notes:
 .. code:: sh
 
     towncrier --draft
-
 
 Build the release notes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -135,7 +129,6 @@ After confirming that the release package looks okay, release a new version:
 .. code:: sh
 
     make release bump=$$VERSION_PART_TO_BUMP$$
-
 
 This command will:
 

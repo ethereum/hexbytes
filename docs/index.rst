@@ -1,5 +1,5 @@
 HexBytes
---------
+========
 
 HexBytes is a *very* thin wrapper around the python built-in ``bytes`` class.
 
@@ -18,7 +18,7 @@ It adds these features:
 
 
 Installation
-~~~~~~~~~~~~
+------------
 
 .. code-block:: bash
 
