@@ -71,12 +71,12 @@ log_format = "%(levelname)8s  %(asctime)s  %(filename)20s  %(message)s"
 xfail_strict = true
 
 [tool.towncrier]
-# Read https://github.com/ethereum/<REPO_NAME>/blob/main/newsfragments/README.md for instructions
+# Read https://github.com/ethereum/hexbytes/blob/main/newsfragments/README.md for instructions
 directory = "newsfragments"
 filename = "docs/release_notes.rst"
-issue_format = "`#{issue} <https://github.com/ethereum/<REPO_NAME>/issues/{issue}>`__"
-package = "<MODULE_NAME>"
-title_format = "<REPO_NAME> v{version} ({project_date})"
+issue_format = "`#{issue} <https://github.com/ethereum/hexbytes/issues/{issue}>`__"
+package = "hexbytes"
+title_format = "hexbytes v{version} ({project_date})"
 underlines = ["-", "~", "^"]
 
 [[tool.towncrier.type]]

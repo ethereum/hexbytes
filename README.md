@@ -12,8 +12,6 @@ Read the [documentation](https://hexbytes.readthedocs.io/).
 
 View the [change log](https://hexbytes.readthedocs.io/en/latest/release_notes.html).
 
-View the [change log](https://%3CRTD_NAME%3E.readthedocs.io/en/latest/release_notes.html).
-
 ## Installation
 
 ```sh
