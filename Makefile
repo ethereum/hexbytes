@@ -6,15 +6,19 @@ help:
 	@echo "clean-build - remove build artifacts"
 	@echo "clean-pyc - remove Python file artifacts"
 	@echo "clean - run clean-build and clean-pyc"
+	@echo "dist - build package and cat contents of the dist directory"
 	@echo "lint - fix linting issues with pre-commit"
 	@echo "test - run tests quickly with the default Python"
 	@echo "docs - generate docs and open in browser (linux-docs for version on linux)"
-	@echo "notes - consume towncrier newsfragments/ and update release notes in docs/"
-	@echo "release - package and upload a release (does not run notes target)"
+	@echo "autobuild-docs - live update docs when changes are saved"
+	@echo "package-test - build package and install it in a venv for manual testing"
+	@echo "notes - consume towncrier newsfragments and update release notes in docs - requires bump to be set"
+	@echo "release - package and upload a release (does not run notes target) - requires bump to be set"
 
 clean-build:
 	rm -fr build/
 	rm -fr dist/
+	rm -fr *.egg-info
 
 clean-pyc:
 	find . -name '*.pyc' -exec rm -f {} +
@@ -24,6 +28,10 @@ clean-pyc:
 
 clean: clean-build clean-pyc
 
+dist: clean
+	python -m build
+	ls -l dist
+
 lint:
 	@pre-commit run --all-files --show-diff-on-failure || ( \
 		echo "\n\n\n * pre-commit should have fixed the errors above. Running again to make sure everything is good..." \
@@ -31,7 +39,7 @@ lint:
 	)
 
 test:
-	pytest tests
+	python -m pytest tests
 
 # docs commands
 
@@ -40,6 +48,9 @@ docs: check-docs
 
 linux-docs: check-docs
 	xdg-open docs/_build/html/index.html
+
+autobuild-docs:
+	sphinx-autobuild --open-browser docs docs/_build/html
 
 # docs helpers
 
@@ -54,8 +65,6 @@ build-docs:
 	$(MAKE) -C docs clean
 	$(MAKE) -C docs html
 	$(MAKE) -C docs doctest
-
-# docs helpers for CI, which requires extra dependencies
 
 check-docs-ci: build-docs build-docs-ci validate-newsfragments
 
