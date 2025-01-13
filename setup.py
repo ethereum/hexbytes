@@ -41,7 +41,7 @@ with open("./README.md") as readme:
 setup(
     name="hexbytes",
     # *IMPORTANT*: Don't manually change the version here. See Contributing docs for the release process.
-    version="1.2.1",
+    version="1.3.0",
     description="""hexbytes: Python `bytes` subclass that decodes hex, with a readable console output""",
     long_description=long_description,
     long_description_content_type="text/markdown",
