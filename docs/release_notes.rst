@@ -3,6 +3,21 @@ Release Notes
 
 .. towncrier release notes start
 
+hexbytes v1.3.0 (2025-01-13)
+----------------------------
+
+Features
+~~~~~~~~
+
+- Merge template, adding `py313` suppport and removing ``bumpversion`` for ``bump-my-version`` (`#50 <https://github.com/ethereum/hexbytes/issues/50>`__)
+
+
+Internal Changes - for hexbytes Contributors
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Bump ``towncrier`` dep from ``>=21,<22`` to ``>=24,<25`` (`#49 <https://github.com/ethereum/hexbytes/issues/49>`__)
+
+
 hexbytes v1.2.1 (2024-06-17)
 ----------------------------
 

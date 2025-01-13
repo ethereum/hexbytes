@@ -1,1 +1,0 @@
-Bump ``towncrier`` dep from ``>=21,<22`` to ``>=24,<25``
