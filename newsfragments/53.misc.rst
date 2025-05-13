@@ -1,0 +1,1 @@
+For developers: Removes ``hypothesis`` upper pin, silencing some deprecation warnings coming from the earlier upper pin by allowing later hypothesis versions to be used.
