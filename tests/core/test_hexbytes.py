@@ -1,4 +1,5 @@
 import pytest
+import pickle
 
 from eth_utils import (
     decode_hex,
@@ -125,3 +126,22 @@ def test_slice_stepped(primitive, start, stop, step):
         step = None
     expected = HexBytes(primitive[start:stop:step])
     assert hexbytes[start:stop:step] == expected
+
+
+def test_reduce_consistency():
+    obj = HexBytes(b"0x1234")
+
+    reduce_fn, reduce_args, *maybe_state = obj.__reduce__()
+
+    # recreate manually using reduce_fn
+    recreated = reduce_fn(*reduce_args)
+    if maybe_state:
+        recreated.__setstate__(maybe_state[0])
+
+    # check recreated instance equals original
+    assert recreated == obj  # or compare fields manually
+
+    dumped = pickle.dumps(obj)
+    loaded = pickle.loads(dumped)
+
+    assert loaded == obj
