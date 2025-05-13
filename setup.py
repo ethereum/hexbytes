@@ -23,7 +23,7 @@ extras_require = {
     ],
     "test": [
         "eth_utils>=2.0.0",
-        "hypothesis>=3.44.24,<=6.31.6",
+        "hypothesis>=3.44.24",
         "pytest>=7.0.0",
         "pytest-xdist>=2.4.0",
     ],
