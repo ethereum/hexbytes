@@ -1,0 +1,1 @@
+Add an optimized ``__reduce__`` method to the ``HexBytes`` class that avoids validation when pickling / unpickling since the instance is already validated on creation.
