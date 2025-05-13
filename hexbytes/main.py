@@ -3,7 +3,6 @@ from typing import (
     Callable,
     Tuple,
     Type,
-    TypeVar,
     Union,
     cast,
     overload,
@@ -17,8 +16,6 @@ if TYPE_CHECKING:
     from typing import (
         SupportsIndex,
     )
-
-_THexBytes = TypeVar("_THexBytes", bound="HexBytes")
 
 BytesLike = Union[bool, bytearray, bytes, int, str, memoryview]
 
@@ -65,15 +62,11 @@ class HexBytes(bytes):
         return "0x" + self.hex()
 
     def __reduce__(
-        self
-    ) -> Tuple[
-        Callable[[Type[_THexBytes], bytes], _THexBytes], 
-        Tuple[Type[_THexBytes], bytes],
-    ]:
+        self,
+    ) -> Tuple[Callable[..., bytes], Tuple[Type["HexBytes"], bytes]]:
         """
-        An optimized `__reduce__` that bypasses the input validation in `HexBytes.__new__`
-        since an existing HexBytes instance has already been validated when created.
-
-        This enables much faster unpickling of HexBytes objects.
+        An optimized ``__reduce__`` that bypasses the input validation in
+        ``HexBytes.__new__`` since an existing HexBytes instance has already been
+        validated when created.
         """
         return bytes.__new__, (type(self), bytes(self))
