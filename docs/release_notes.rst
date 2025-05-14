@@ -3,6 +3,21 @@ Release Notes
 
 .. towncrier release notes start
 
+hexbytes v1.3.1 (2025-05-14)
+----------------------------
+
+Miscellaneous Changes
+~~~~~~~~~~~~~~~~~~~~~
+
+- `#53 <https://github.com/ethereum/hexbytes/issues/53>`__
+
+
+Performance Improvements
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Add an optimized ``__reduce__`` method to the ``HexBytes`` class that avoids validation when pickling / unpickling since the instance is already validated on creation. (`#52 <https://github.com/ethereum/hexbytes/issues/52>`__)
+
+
 hexbytes v1.3.0 (2025-01-13)
 ----------------------------
 
