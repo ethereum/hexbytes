@@ -43,7 +43,7 @@ def hexstr_to_bytes(hexstr: str) -> bytes:
 
     try:
         ascii_hex = padded_hex.encode("ascii")
-    except UnicodeDecodeError as err:
+    except UnicodeEncodeError as err:
         raise ValueError(
             f"hex string {padded_hex} may only contain [0-9a-fA-F] characters"
         ) from err

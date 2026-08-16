@@ -73,6 +73,13 @@ def test_invalid_integer_inputs(integer):
     assert str(integer) in message
 
 
+def test_invalid_non_ascii_hexstr():
+    with pytest.raises(ValueError) as exc_info:
+        HexBytes("0x0é")
+
+    assert "may only contain [0-9a-fA-F] characters" in str(exc_info.value)
+
+
 @given(st.integers(min_value=0))
 def test_integer_inputs(integer):
     wrapped = HexBytes(integer)
