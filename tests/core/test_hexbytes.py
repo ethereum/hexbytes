@@ -36,6 +36,20 @@ def test_bytes_inputs(primitive):
     assert_equal(wrapped, primitive)
 
 
+def test_hexbytes_input_creates_new_instance():
+    wrapped = HexBytes(b"abc")
+    assert HexBytes(wrapped) is not wrapped
+
+
+def test_bytes_input_preserves_subclass():
+    class CustomHexBytes(HexBytes):
+        pass
+
+    wrapped = CustomHexBytes(b"abc")
+    assert type(wrapped) is CustomHexBytes
+    assert type(CustomHexBytes(HexBytes(b"abc"))) is CustomHexBytes
+
+
 @given(st.binary())
 def test_bytearray_inputs(primitive):
     byte_array_input = bytearray(primitive)

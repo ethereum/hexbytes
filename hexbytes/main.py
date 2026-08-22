@@ -30,6 +30,8 @@ class HexBytes(bytes):
     """
 
     def __new__(cls, val: BytesLike) -> "HexBytes":
+        if isinstance(val, bytes):
+            return super().__new__(cls, val)
         bytesval = to_bytes(val)
         return super().__new__(cls, bytesval)
 
