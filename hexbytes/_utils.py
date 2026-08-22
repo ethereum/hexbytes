@@ -35,6 +35,9 @@ def hexstr_to_bytes(hexstr: str) -> bytes:
     else:
         non_prefixed_hex = hexstr
 
+    if not non_prefixed_hex:
+        return b""
+
     # if the hex string is odd-length, then left-pad it to an even length
     if len(hexstr) % 2:
         padded_hex = "0" + non_prefixed_hex

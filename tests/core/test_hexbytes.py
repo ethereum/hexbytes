@@ -91,6 +91,11 @@ def test_hex_inputs(hex_input):
     assert_equal(wrapped, expected)
 
 
+@pytest.mark.parametrize("hex_input", ("", "0x", "0X"))
+def test_empty_hex_inputs(hex_input):
+    assert_equal(HexBytes(hex_input), b"")
+
+
 def test_pretty_output():
     hb = HexBytes(b"\x0f\x1a")
     assert repr(hb) == "HexBytes('0x0f1a')"
