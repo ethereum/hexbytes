@@ -22,7 +22,7 @@ def to_bytes(val: bool | bytearray | bytes | int | str | memoryview) -> bytes:
         if val < 0:
             raise ValueError(f"Cannot convert negative integer {val} to bytes")
         else:
-            return to_bytes(hex(val))
+            return val.to_bytes(max(1, (val.bit_length() + 7) // 8), "big")
     elif isinstance(val, memoryview):
         return bytes(val)
     else:

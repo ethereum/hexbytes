@@ -80,6 +80,21 @@ def test_integer_inputs(integer):
     assert_equal(wrapped, standard_to_bytes(integer))
 
 
+@pytest.mark.parametrize(
+    "integer",
+    (
+        0,
+        1,
+        255,
+        256,
+        2**256 - 1,
+    ),
+)
+def test_integer_boundary_inputs(integer):
+    wrapped = HexBytes(integer)
+    assert_equal(wrapped, standard_to_bytes(integer))
+
+
 @given(hexstr_strategy)
 def test_hex_inputs(hex_input):
     wrapped = HexBytes(hex_input)
