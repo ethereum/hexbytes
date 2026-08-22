@@ -116,11 +116,26 @@ def test_hexbytes_index(primitive, index):
         assert hexbytes[index] == primitive[index]
 
 
+def test_hexbytes_index_type():
+    assert isinstance(HexBytes(b"abc")[0], int)
+
+
 @given(st.binary(), st.integers(), st.integers())
 def test_slice(primitive, start, stop):
     hexbytes = HexBytes(primitive)
     expected = HexBytes(primitive[start:stop])
     assert hexbytes[start:stop] == expected
+
+
+def test_slice_type():
+    assert type(HexBytes(b"abc")[:2]) is HexBytes
+
+
+def test_slice_preserves_subclass():
+    class CustomHexBytes(HexBytes):
+        pass
+
+    assert type(CustomHexBytes(b"abc")[:2]) is CustomHexBytes
 
 
 @given(st.binary(), st.integers(), st.integers(), st.integers())
